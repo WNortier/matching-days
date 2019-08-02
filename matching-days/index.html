@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./simple-grid.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <!-- 
+        
+            <div class='weekdayBlockDivs {{stlye}}' id='{{day}}'>{{day}}</div>
+
+     -->
+
+     <script type="text/x-template" class="weekdayTemplateMock">
+
+        <div class="col-12 center mock" id="#">
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Mon</p></div>
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Tue</p></div>
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Wed</p></div>
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Thu</p></div>
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Fri</p></div>
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Sat</p></div>
+
+            <div class="weekdayBlockDivs mockChild" id="#"><p>Sun</p></div>
+
+        </div>
+    </script>
+
+    <script type="text/x-template" class="weekdayTemplate">
+
+        <div class="col-12 center" id="#">
+            {{#each this}}
+            <div class="weekdayBlockDivs" id="{{style}}"><p>{{day}}</p></div>
+
+            {{/each}}
+        </div>
+ 
+    
+    </script>
+    <!-- {{#each userData}}
+    {{/each}} -->
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="row" name="SPACER">
+        <div class="col-12 spacer"></div>
+    </div>
+
+
+    <div class="row" name="HEADER">
+        <div class="col-4"></div>
+        <div class="col-4 center header"><h1 style="color:#337dff"><span style="color:#7fff7f;">Matching</span> D<span style="color:#ff3333;">a<span style="color:#337dff">y</span>s</span></h1></div>
+        <div class="col-4"></div>
+    </div>
+
+
+    <!-- ▉▉▉▉▉▉ ENTERED DAYS ▉▉▉▉▉▉ -->
+    <div class="row weekdayTemplateInsertPoint weekdayTemplateMockInsertPoint" name="ENTERED DAYS" id="deleteMe">
+        <!-- <div class="col-12 center " id="#">
+
+            <div class="weekdayBlockDivs " id="mondayBlock"><p>Monday</p></div>
+
+            <div class="weekdayBlockDivs" id="tuesdayBlock"><p>Tuesday</p></div>
+
+            <div class="weekdayBlockDivs" id="wednesdayBlock"><p>Wednesday</p></div>
+
+            <div class="weekdayBlockDivs" id="thursdayBlock"><p>Thursday</p></div>
+
+            <div class="weekdayBlockDivs" id="fridayBlock"><p>Friday</p></div>
+
+            <div class="weekdayBlockDivs" id="saturdayBlock"><p>Saturday</p></div>
+
+            <div class="weekdayBlockDivs" id="sundayBlock"><p>Sunday</p></div>
+
+        </div> -->
+    </div>
+
+    <div class="row" name="SPACER">
+            <div class="col-12"></div>
+        </div>
+
+
+    <div class="row" name="ERROR BLOCK">
+        <div class="col-3"></div>
+        <div class="col-6 center appContainer errorRow">
+            <p>Enter both date fields using 'DD Month YYYY' format to begin matching!</p>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+
+    <!-- ▉▉▉▉▉▉ DATE SETTINGS ▉▉▉▉▉▉ -->
+    <div class="row" name="DATE SETTINGS">
+        <div class="col-4"></div>
+        <div class="col-4 center appContainer">
+                
+            <p>Date One</p><input type="text" class="dateFields" id="firstDate" maxlength="17" autocomplete="off" placeholder="DD Month YYYY">
+            
+        
+        
+            <p>Date Two</p><input type="text" class="dateFields" id="secondDate" maxlength="17" autocomplete="off" placeholder="DD Month YYYY">
+            
+        
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+    <div class="row" name="SPACER">
+            <div class="col-4"></div>
+            <div class="col-4 center">
+                    <button id="infoButton">Get Info</button>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <div class="row" name="SPACER">
+                <div class="col-12" id="loaderInsertPoint">
+                        
+                </div>
+            </div>
+        
+
+
+
+    <div class="row" name="INFO">
+
+            <div class="col-4"></div>
+
+            <div class="col-4 center appContainer" id="appInfo" style="display:none;">
+                    
+
+
+                <p>
+                    - Enter different dates into the fields above
+                    <br>
+                    - Blocks of the corresponding weekdays light up
+                    <br>
+                    - If weekdays match the block lights up green
+                    </p>
+            </div>
+            <div class="col-4" ></div>
+        </div>
+
+        <div class="row" name="SPACER">
+            <div class="col-12" ></div>
+        </div>
+
+
+        
+
+    <!-- onclick="function infoButton()" -->
+
+</body>
+<script src="./matchingDaysFactory.js" charset="utf-8"></script>
+<script src="./matchingDaysScript.js" charset="utf-8"></script>
+
+<script src="./matching-days.js" charset="utf-8"></script>
+</html>
+

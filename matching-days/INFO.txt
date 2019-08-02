@@ -1,0 +1,2 @@
+nice neat version
+implemented a mock script - test it by entering dates
